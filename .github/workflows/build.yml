@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 20
       - uses: dtolnay/rust-toolchain@stable
-      - name: Prepare dist
+      - name: Prepare dist and icons
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist
@@ -19,6 +19,8 @@ jobs:
           Copy-Item index.html dist/index.html -Force
           Copy-Item -Recurse src dist/src -Force
           Copy-Item usb_rescue_icon.png src-tauri/icons/icon.png -Force
+          pip install pillow
+          python -c "from PIL import Image; im=Image.open('usb_rescue_icon.png'); im.save('src-tauri/icons/icon.ico', sizes=[(16,16),(32,32),(48,48),(256,256)])"
       - run: npm install
       - run: npx tauri build
       - uses: actions/upload-artifact@v4
