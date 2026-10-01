@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USB Rescue Toolkit</title>
+<style>
+body{font-family:Arial;background:#fff;color:#111;margin:0;padding:16px;text-align:center}
+.header img{width:90px}
+.btn{background:#000;color:#fff;border:2px solid #ff7a00;padding:12px 20px;border-radius:8px;margin:8px;cursor:pointer;font-size:16px}
+.card{border:1px solid #ddd;border-radius:10px;padding:12px;margin:10px 0;text-align:left}
+.verde{border-left:6px solid green}.amarillo{border-left:6px solid orange}.rojo{border-left:6px solid red}
+</style></head>
+<body>
+<div class="header"><img src="usb_rescue_icon.png"><h2>USB Rescue Toolkit</h2>
+<div><button onclick="setLang('pt')">PT</button><button onclick="setLang('es')">ES</button><button onclick="setLang('en')">EN</button></div>
+</div>
+<div class="card"><b>ID de PC:</b> <span id="hwid">CARGANDO...</span><br><br>
+<input id="lic" placeholder="Licença 25 caracteres" style="width:90%;padding:10px"><br><br>
+<button class="btn" onclick="activar()">Activar</button>
+<a class="btn" style="text-decoration:none" href="https://wa.me/5541997294355?text=Quiero%20USB%20Rescue%20Toolkit">WhatsApp</a>
+</div>
+<div class="card"><h3>1. Conecte pendrive / SD</h3><button class="btn" onclick="diagnosticar()">Diagnosticar</button><div id="reporte"></div></div>
+<div class="card"><h3>2. Recuperar arquivos</h3><button class="btn" onclick="escanear()">Escanear</button><div id="files"></div></div>
+<script src="src/main.js"></script>
+</body></html>
