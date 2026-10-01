@@ -1,0 +1,4 @@
+{
+  "package": { "productName": "USB Rescue Toolkit", "version": "1.0.0" },
+  "tauri": { "bundle": { "identifier": "com.iacomputers.usbrescue", "icon": ["icons/icon.png"] } }
+}
