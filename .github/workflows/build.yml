@@ -23,7 +23,13 @@ jobs:
           python -c "from PIL import Image; im=Image.open('usb_rescue_icon.png'); im.save('src-tauri/icons/icon.ico', sizes=[(16,16),(32,32),(48,48),(256,256)])"
       - run: npm install
       - run: npx tauri build
+      - name: List bundle
+        shell: pwsh
+        run: Get-ChildItem -Recurse src-tauri/target/release/bundle
       - uses: actions/upload-artifact@v4
         with:
           name: USB-Rescue-Toolkit-exe
-          path: src-tauri/target/release/bundle/
+          path: |
+            src-tauri/target/release/bundle/
+            src-tauri/target/release/*.exe
+          if-no-files-found: warn
