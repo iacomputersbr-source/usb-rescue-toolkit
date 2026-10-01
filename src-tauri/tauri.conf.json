@@ -1,4 +1,19 @@
 {
-  "package": { "productName": "USB Rescue Toolkit", "version": "1.0.0" },
-  "tauri": { "bundle": { "identifier": "com.iacomputers.usbrescue", "icon": ["icons/icon.png"] } }
+  "package": {
+    "productName": "USB Rescue Toolkit",
+    "version": "1.0.0"
+  },
+  "build": {
+    "distDir": "../",
+    "devPath": "../index.html"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "identifier": "com.iacomputers.usbrescue",
+      "icon": ["icons/icon.png"],
+      "targets": "all"
+    },
+    "allowlist": { "all": true }
+  }
 }
