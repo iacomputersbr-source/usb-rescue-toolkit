@@ -4,8 +4,8 @@
     "version": "1.0.0"
   },
   "build": {
-    "distDir": "../",
-    "devPath": "../index.html"
+    "distDir": "../dist",
+    "devPath": "../dist/index.html"
   },
   "tauri": {
     "bundle": {
